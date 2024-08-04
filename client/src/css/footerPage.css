@@ -1,0 +1,101 @@
+/* footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: min-content;
+    max-height: max-content;
+    width: 100%;
+} */
+
+footer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size:2.15dvw;
+    text-align:justify;
+    background: rgb(28, 40, 67);
+    padding: 3dvw 0px;
+    /* margin-bottom: 12vw; */
+}
+
+.tooltip {
+    position: fixed;
+    background-color: rgba(28, 32, 57, 0.85);;
+    color: #ffffff;
+    padding: 0dvw 0dvw;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1;
+    width: 30dvw;
+    height: 4dvw;
+    /* Posicionamiento y animación pueden ajustarse según tus necesidades */
+    top: 88%;
+    left: 72%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  
+    /* Mostrar el tooltip */
+    &.showEmail {
+      opacity: 1;
+    }
+    &.showTlf {
+      opacity: 1;
+      width: 15dvw;
+    }
+  }
+
+footer div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 2dvw;
+}
+
+footer h1 {
+    padding-bottom: 1dvw;
+    font-size: 4.5vw;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+footer div img {
+    width: 5vw;
+    height: 5vw;
+}
+
+/* .sobre_mi h1, .herramienta h1 {
+    font-size: 4.5vw;
+    margin-bottom: 2px;
+    font-weight: bold;
+} */
+
+@media (max-width: 400px) {
+    /* .info_personal {
+        padding-left: 17vw;
+    } */
+    footer {
+        padding-left: 14dvw;
+        padding-right: 5.5dvw;
+    }
+}
+
+@media (min-width: 400px) {
+    /* .info_personal {
+        padding-left: 20vw;
+    } */
+    footer {
+        padding-left: 4dvw;
+        padding-right: 5.5dvw;
+    }
+}
+
+@media (min-width: 768px) {
+    footer {
+        padding-left: 3dvw;
+        padding-right: 5.5dvw;
+    }
+}

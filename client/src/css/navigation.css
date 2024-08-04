@@ -1,0 +1,427 @@
+.sidebar {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 56px;
+    height: 100vh;
+    background: #4f2cd4;
+    transition: width 0.4s;
+}
+
+.sidebar.open {
+    width: 160px;
+}
+.sidebar .inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+}
+
+.sidebar header {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding: 0 6px;
+    background: rgb(0 0 0 / 25%);
+}
+
+.sidebar-burger {
+    width: 44px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    color: #f9f9f9;
+    font-family: "Consola Mono";
+    background: local;
+    border: none;
+}
+
+.sidebar p > img{
+    height: 28px;
+}
+
+.sidebar header button span span{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar header button{
+    padding: 0;
+}
+
+.sidebar.open header button span img{
+    padding-right: 6px;
+}
+
+.sidebar nav {
+    display: grid;
+    padding: 4px;
+    gap: 2px;
+}
+
+/* .sidebar header button{
+    
+    background: #4f2cd4;
+} */
+
+.sidebar nav > button {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    font-family: "Consola Mono";
+    font-size: 16px;
+    line-height: 1;
+    padding: 0 12px;
+    background: local;
+    border: none;
+    /* border-radius: 8px; */
+    color: #f9f9f9;
+}
+
+.sidebar nav > button:hover{
+    background: rgb(0 0 0 / 30%);
+}
+
+.sidebar header > img, .sidebar nav > button p {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.sidebar div.inner header button span > img, .icon.open {
+    height: 24px;
+}
+
+/* .sidebar div.inner header button span > img {
+    height: 24px;
+} */
+
+.sidebar.open :is(nav button p, header > img){
+    opacity: 1;
+}
+
+.sidebar.open nav > button {
+    width: 100%;
+}
+
+/* .icon.open {
+    height: 24px;
+} */
+@media (max-width: 300px) {
+    .sidebar div.inner header button span > img, .icon.open, .icon {
+        height: 8px;
+    }
+    .sidebar p > img {
+        height: 12px;
+    }
+    .sidebar nav > button {
+        gap: 2px;
+        height: 14px;
+        width: 14px;
+        font-size: 7px;
+        padding-left: 5px;
+        padding: 0px 2px;
+        /* padding: 0 12px; */
+        /* border-radius: 8px; */
+    }
+    .sidebar-burger {
+        width: 14px;
+        height: 36px;
+        font-size: 7px;
+    }
+    .sidebar.open, .sidebar .inner {
+        width: 70px;
+    }
+    .sidebar {
+        width: 22px;
+    }
+    .sidebar header {
+        height: 28px;
+        padding-left: 3px;
+    }
+}
+
+@media (min-width: 300px) {
+    .sidebar div.inner header button span > img, .icon.open, .icon {
+        height: 14px;
+    }
+    .sidebar p > img {
+        height: 18px;
+    }
+    .sidebar nav > button {
+        gap: 2px;
+        height: 20px;
+        width: 20px;
+        font-size: 8px;
+        padding-left: 6px;
+        padding: 0px 3px;
+        /* padding: 0 12px; */
+        /* border-radius: 8px; */
+    }
+    .sidebar-burger {
+        width: 20px;
+        height: 48px;
+        font-size: 8px;
+    }
+    .sidebar.open, .sidebar .inner {
+        width: 100px;
+    }
+    .sidebar {
+        width: 30px;
+    }
+    .sidebar header {
+        height: 36px;
+        padding-left: 4px;
+    }
+}
+
+/* @media (min-width: 328px) {
+    .sidebar div.inner header button span > img, .icon.open {
+        height: 24px;
+    }
+    .sidebar p > img {
+        height: 28px;
+    }
+    .sidebar nav > button {
+        gap: 10px;
+        height: 46px;
+        width: 46px;
+        font-size: 12px;
+    }
+    .sidebar-burger {
+        width: 40px;
+        height: 68px;
+        font-size: 12px;
+    }
+    .sidebar.open, .sidebar .inner {
+        width: 150px;
+    }
+    .sidebar {
+        width: 54px;
+    }
+} */
+
+/* @media (min-width: 400px) {
+    .sidebar div.inner header button span > img, .icon.open {
+        height: 22px;
+    }
+    .sidebar p > img {
+        height: 24px;
+    }
+    .sidebar nav > button {
+        height: 28px;
+        width: 28px;
+        font-size: 12px;
+        padding-left: 6px;
+    }
+    .sidebar-burger {
+        width: 32px;
+        height: 64px;
+        font-size: 12px;
+    }
+    .sidebar.open div.inner nav button img {
+        padding-right: 6px;
+    }
+    .sidebar.open, .sidebar .inner {
+        width: 120px;
+    }
+    .sidebar {
+        width: 40px;
+    }
+} */
+
+/* @media (min-width: 600px) {
+    .sidebar div.inner header button span > img, .icon.open {
+        height: 26px;
+    }
+    .sidebar p > img {
+        height: 28px;
+    }
+    .sidebar nav > button {
+        height: 32px;
+        width: 32px;
+        font-size: 14px;
+        padding-left: 6px;
+    }
+    .sidebar-burger {
+        width: 36px;
+        height: 68px;
+        font-size: 14px;
+    }
+    .sidebar.open div.inner nav button img {
+        padding-right: 6px;
+    }
+    .sidebar.open, .sidebar .inner {
+        width: 140px;
+    }
+    .sidebar {
+        width: 44px;
+    }
+} */
+
+/* @media (min-width: 768px) {
+    .sidebar div.inner header button span > img, .icon.open {
+        height: 32px;
+    }
+    .sidebar nav > button {
+        height: 40px;
+        width: 40px;
+        font-size: 18px;
+    }
+    .sidebar-burger {
+        width: 48px;
+        height: 76px;
+        font-size: 18px;
+    }
+    .sidebar.open, .sidebar .inner {
+        width: 190px;
+    }
+    .sidebar {
+        width: 54px;
+    }
+} */
+
+
+@media (min-width: 400px) {
+    
+    .sidebar div.inner header button span > img, .icon.open, .icon {
+        height: 4dvw;
+    }
+    /* .sidebar p > img {
+        height: 6dvw;
+    } */
+    .sidebar div.inner header {
+        height: 9dvh;
+    }
+    .sidebar nav > button {
+        gap: 18px;
+        margin-bottom: 1dvw;
+        height: 5dvw;
+        width: 5dvw;
+        font-size: 2.5dvw;
+    }
+    .sidebar-burger {
+        width: 5dvw;
+        height: 6.5dvw;
+        font-size: 2.5dvw;
+    }
+    .sidebar.open, .sidebar .inner {
+        width: 26dvw;
+    }
+    .sidebar {
+        width: 7dvw;
+    }
+}
+
+@media (min-width: 600px) {
+    .sidebar div.inner header button span > img, .icon.open, .icon {
+        height: 4dvw;
+    }
+    /* .sidebar p > img {
+        height: 6dvw;
+    } */
+    .sidebar div.inner header {
+        height: 9dvh;
+    }
+    .sidebar nav > button {
+        gap: 18px;
+        margin-bottom: 1dvw;
+        height: 5dvw;
+        width: 5dvw;
+        font-size: 2.5dvw;
+    }
+    .sidebar-burger {
+        width: 5dvw;
+        height: 6.5dvw;
+        font-size: 2.5dvw;
+    }
+    .sidebar.open, .sidebar .inner {
+        width: 26dvw;
+    }
+    .sidebar {
+        width: 6dvw;
+    }
+}
+
+
+/* @media (min-width: 1020px) {
+    .sidebar div.inner header button span > img, .icon.open {
+        height: 40px;
+    }
+    .sidebar div.inner header {
+        height: 60px;
+    }
+    .sidebar nav > button {
+        gap: 18px;
+        height: 52px;
+        width: 52px;
+        font-size: 22px;
+    }
+    .sidebar-burger {
+        width: 52px;
+        height: 80px;
+        font-size: 22px;
+    }
+    .sidebar.open, .sidebar .inner {
+        width: 220px;
+    }
+    .sidebar {
+        width: 68px;
+    }
+} */
+
+/* @media (min-width: 1440px) {
+    .sidebar div.inner header button span > img, .icon.open {
+        height: 44px;
+    }
+    .sidebar p > img {
+        height: 48px;
+    }
+    .sidebar nav > button {
+        gap: 22px;
+        height: 68px;
+        width: 68px;
+        font-size: 26px;
+    }
+    .sidebar-burger {
+        width: 58px;
+        height: 86px;
+        font-size: 26px;
+    }
+    .sidebar.open, .sidebar .inner {
+        width: 250px;
+    }
+    .sidebar {
+        width: 75px;
+    }
+} */
+
+/* @media (min-width: 1680px) {
+    .sidebar div.inner header button span > img, .icon.open {
+        height: 50px;
+    }
+    .sidebar p > img {
+        height: 54px;
+    }
+    .sidebar nav > button {
+        gap: 26px;
+        height: 74px;
+        width: 74px;
+        font-size: 30px;
+    }
+    .sidebar-burger {
+        width: 64px;
+        height: 92px;
+        font-size: 30px;
+    }
+    .sidebar.open, .sidebar .inner {
+        width: 280px;
+    }
+    .sidebar {
+        width: 82px;
+    }
+} */
