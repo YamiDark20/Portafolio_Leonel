@@ -30,7 +30,7 @@ export const MainPage = ({divSobreMiRef, divHerramientaRef, divInicioRef}) => {
             </div>
             <div className='sobre_mi' ref={divSobreMiRef}>
                 <h1>Sobre mi</h1>
-                <p>Soy Leonel Araujo, un desarrollador full-stack con una pasión por construir interfaces de usuario intuitivas y experiencias de usuario excepcionales. Me encanta combinar mi creatividad con mis habilidades técnicas para dar vida a ideas innovadoras. Con experiencia en React y Next.js, he desarrollado aplicaciones web dinámicas y escalables. Además, mi conocimiento de Laravel me permite crear backend sólidos y eficientes. Estoy buscando oportunidades para aplicar mis habilidades en proyectos que tengan un impacto positivo en los usuarios.
+                <p>Soy Leonel Araujo Moya, un desarrollador full-stack con una pasión por construir interfaces de usuario intuitivas y experiencias de usuario excepcionales. Me encanta combinar mi creatividad con mis habilidades técnicas para dar vida a ideas innovadoras. Con experiencia en React y Next.js, he desarrollado aplicaciones web dinámicas y escalables. Además, mi conocimiento de Laravel me permite crear backend sólidos y eficientes. Estoy buscando oportunidades para aplicar mis habilidades en proyectos que tengan un impacto positivo en los usuarios.
                 </p>
             </div>
             <div className='herramienta' ref={divHerramientaRef}>
