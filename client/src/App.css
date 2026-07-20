@@ -1,47 +1,140 @@
-.App {
-  text-align: center;
+:root {
+  --bg-primary: #07070d;
+  --bg-secondary: #0d0d1a;
+  --bg-card: rgba(15, 15, 35, 0.7);
+  --bg-card-hover: rgba(20, 20, 50, 0.9);
+  --sidebar-bg: rgba(10, 10, 25, 0.95);
+  --neon-cyan: #00f0ff;
+  --neon-magenta: #ff00e6;
+  --neon-green: #00ff88;
+  --neon-purple: #a855f7;
+  --neon-blue: #3b82f6;
+  --text-primary: #e0e0f0;
+  --text-secondary: #7a7a9e;
+  --text-muted: #4a4a6a;
+  --border: rgba(0, 240, 255, 0.15);
+  --border-hover: rgba(0, 240, 255, 0.4);
+  --shadow-neon-cyan: 0 0 15px rgba(0, 240, 255, 0.3);
+  --shadow-neon-magenta: 0 0 15px rgba(255, 0, 230, 0.3);
+  --shadow-neon-green: 0 0 15px rgba(0, 255, 136, 0.3);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.Nav{
-  background-color: #63D471; 
-  height: 85px; 
-  display: flex;
-  justify-content: space-between;
-  padding: 0.2rem calc((100vw - 1000px) / 2);
-  z-index: 12;
+[data-theme="light"] {
+  --bg-primary: #f0f2f5;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --sidebar-bg: rgba(15, 15, 35, 0.98);
+  --neon-cyan: #0891b2;
+  --neon-magenta: #c026d3;
+  --neon-green: #059669;
+  --neon-purple: #7c3aed;
+  --neon-blue: #2563eb;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border: rgba(8, 145, 178, 0.2);
+  --border-hover: rgba(8, 145, 178, 0.5);
+  --shadow-neon-cyan: 0 0 15px rgba(8, 145, 178, 0.2);
+  --shadow-neon-magenta: 0 0 15px rgba(192, 38, 211, 0.2);
+  --shadow-neon-green: 0 0 15px rgba(5, 150, 105, 0.2);
 }
 
-.App-logo {
-  height: 40vmin;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: background-color var(--transition), color var(--transition);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 240, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 0, 230, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(0, 255, 136, 0.02) 0%, transparent 50%);
   pointer-events: none;
+  z-index: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#root {
+  position: relative;
+  z-index: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section-title {
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: clamp(24px, 4vw, 48px);
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+}
+
+.neon-border {
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-neon-cyan), inset 0 0 30px rgba(0, 240, 255, 0.03);
+}
+
+.glow-cyan {
+  box-shadow: var(--shadow-neon-cyan);
+}
+
+.glow-magenta {
+  box-shadow: var(--shadow-neon-magenta);
+}
+
+.glow-green {
+  box-shadow: var(--shadow-neon-green);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes neon-pulse {
+  0%, 100% { box-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan); }
+  50% { box-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan); }
 }
